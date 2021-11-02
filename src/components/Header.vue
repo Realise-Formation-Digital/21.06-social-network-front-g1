@@ -5,7 +5,7 @@
       color="#fcb69f"
       dark
       shrink-on-scroll
-      src="https://picsum.photos/1920/1080?random"
+      src="http://consultationformaction.com/wp-content/uploads/2014/09/horizon-2-845x321.jpg"
       scroll-target="#scrolling-techniques-2"
     >
       <template v-slot:img="{ props }">
@@ -20,38 +20,44 @@
       <v-app-bar-title>Title</v-app-bar-title>
 
       <v-spacer></v-spacer>
+        <v-text-field
+        v-if="showSearch"
+            
+          ></v-text-field>
 
-      <v-btn icon>
+      <v-btn icon  @click="onclickSearch()">
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
 
       <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
+        <v-icon>mdi-account-edit</v-icon>
       </v-btn>
 
       <v-btn icon>
         <v-icon>mdi-dots-vertical</v-icon>
       </v-btn>
     </v-app-bar>
-    <v-sheet
-      id="scrolling-techniques-2"
-      class="overflow-y-auto"
-      max-height="600"
-    >
-      <v-container style="height: 1000px;"></v-container>
-    </v-sheet>
   </v-card>
 </template>
 
 <script>
 export default {
-    name: "Header",
-    
+  name: "Header",
+  data() {
+    return {
+      showSearch:false,
 
-}
+    };
+  },
+  methods:{
+    onclickSearch(){ 
+      this.showSearch = !this.showSearch
+
+    }
+  }
+};
 
 </script>
 
 <style>
-
 </style>
