@@ -57,4 +57,6 @@ export default {
 .col {
   text-align: center;
 }
+
+
 </style>
