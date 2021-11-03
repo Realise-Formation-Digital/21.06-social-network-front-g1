@@ -10,7 +10,7 @@
       flat
       tile
       class="indigo lighten-1 white--text width-100"
-    >
+    ><br><br>
     <v-card-text class="white--text pt-0">
       Faites appel à nous pour peaufiner votre projet, du choix des hôtels à la sélection de vos vols, du dessin de votre itinéraire au tri des activités.  Chez nous, tout est possible !
 
@@ -35,6 +35,7 @@
       <v-card-text class="white--text">
         {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
       </v-card-text>
+     <br><br>
     </v-card>
   </v-footer>
   
