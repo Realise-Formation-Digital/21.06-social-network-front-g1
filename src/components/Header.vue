@@ -1,7 +1,7 @@
 <template>
   <v-card class="overflow-hidden">
     <v-app-bar
-      absolute
+      
       color="#fcb69f"
       dark
       shrink-on-scroll
@@ -15,9 +15,9 @@
         ></v-img>
       </template>
 
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+     <!-- Logo -->
 
-      <v-app-bar-title>Title</v-app-bar-title>
+     
 
       <v-spacer></v-spacer>
         <v-text-field

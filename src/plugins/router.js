@@ -11,7 +11,7 @@ import Destination from "../pages/Destination";
 
 const routes = [
     { path: '/', component: Home },
-    { path: '/about-us', component: AboutUs },
+    { path: '/aboutus', component: AboutUs },
     { path: '/contact', component: Contact },
     { path: '/destination', component: Destination },
 ]
