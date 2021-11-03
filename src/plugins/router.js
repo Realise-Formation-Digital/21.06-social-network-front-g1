@@ -4,14 +4,14 @@ Vue.use(VueRouter)
 
 //Pages
 import Home from "../pages/Home";
-import AboutUs from "../pages/AboutUs";
+import Agence from "../pages/Agence";
 import Contact from "../pages/Contact";
 import Destination from "../pages/Destination";
 
 
 const routes = [
     { path: '/', component: Home },
-    { path: '/aboutus', component: AboutUs },
+    { path: '/agence', component: Agence },
     { path: '/contact', component: Contact },
     { path: '/destination', component: Destination },
 ]
