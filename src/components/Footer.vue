@@ -2,7 +2,6 @@
 <v-footer
     dark
     padless
-    absolute
     class="d-flex justify-center"
   >
     <v-card

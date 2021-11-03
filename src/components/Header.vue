@@ -1,40 +1,36 @@
 <template>
   <v-card class="overflow-hidden">
     <v-app-bar
-      
-      color="#fcb69f"
-      dark
+      color="#ffffff" 
       shrink-on-scroll
-      src="http://consultationformaction.com/wp-content/uploads/2014/09/horizon-2-845x321.jpg"
+           
+      
       scroll-target="#scrolling-techniques-2"
     >
-      <template v-slot:img="{ props }">
-        <v-img
-          v-bind="props"
-          gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
-        ></v-img>
-      </template>
-
-     <!-- Logo -->
-
-     
+      <!-- Logo -->
 
       <v-spacer></v-spacer>
-        <v-text-field
-        v-if="showSearch"
-            
-          ></v-text-field>
 
-      <v-btn icon  @click="onclickSearch()">
+      <!-- Incon du Header -->
+      <v-text-field v-if="showSearch"></v-text-field>
+
+      <v-btn id="color" icon  @click="onclickSearch()">
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-account-edit</v-icon>
+      <v-btn id="color" tile height="48"  plain  >
+        ACCUEIL 
       </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
+       <v-btn id="color" tile height="48" plain >
+        DESTINATIONS
+      </v-btn>
+      <v-btn id="color" tile height="48" plain >
+        L'AGENCE
+      </v-btn>
+      <v-btn id="color" tile height="48" plain >
+        CONTACT
+      </v-btn>
+      <v-btn id="color" tile height="48" plain >
+        LOGIN
       </v-btn>
     </v-app-bar>
   </v-card>
@@ -45,19 +41,23 @@ export default {
   name: "Header",
   data() {
     return {
-      showSearch:false,
-
+      showSearch: false,
     };
   },
-  methods:{
-    onclickSearch(){ 
-      this.showSearch = !this.showSearch
-
-    }
-  }
+  methods: {
+    onclickSearch() {
+      this.showSearch = !this.showSearch;
+    },
+  },
 };
-
 </script>
 
 <style>
+#color{
+  color: rgb(13, 114, 155);
+  margin-top: 20px;
+}
+.overflow-hidden{
+  margin-bottom: -40px;
+}
 </style>
