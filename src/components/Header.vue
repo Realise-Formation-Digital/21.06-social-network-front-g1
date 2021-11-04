@@ -5,7 +5,6 @@
       shrink-on-scroll
            
       
-      scroll-target="#scrolling-techniques-2"
     >
       <!-- Logo -->
 
@@ -14,22 +13,24 @@
       <!-- Incon du Header -->
       <v-text-field v-if="showSearch"></v-text-field>
 
-      <v-btn id="color" icon  @click="onclickSearch()">
+      <v-btn  id="color" icon  @click="onclickSearch()">
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
-      <v-btn id="color" tile height="48"  plain  >
+      <v-btn to="/" id="color" tile height="48"  plain  >
         ACCUEIL 
       </v-btn>
-       <v-btn id="color" tile height="48" plain >
+       <v-btn to="/Destination" id="color" tile height="48" plain >
         DESTINATIONS
       </v-btn>
-      <v-btn id="color" tile height="48" plain >
+      <v-btn to="/Agence" id="color" tile height="48" plain >
         L'AGENCE
       </v-btn>
-      <v-btn id="color" tile height="48" plain >
+      <v-btn to="/Contact" id="color" tile height="48" plain >
         CONTACT
       </v-btn>
-      <v-btn id="color" tile height="48" plain >
+      <!-- <v-text-field v-if="showLogin"></v-text-field> -->
+
+      <v-btn id="color" tile height="48" plain  @click="onclickLogin()">
         LOGIN
       </v-btn>
     </v-app-bar>
@@ -42,12 +43,17 @@ export default {
   data() {
     return {
       showSearch: false,
+      showLogin:false,
     };
   },
   methods: {
     onclickSearch() {
       this.showSearch = !this.showSearch;
     },
+    onclickLogin(){
+      this.showLogin = !this.showLogin;
+
+    }
   },
 };
 </script>
