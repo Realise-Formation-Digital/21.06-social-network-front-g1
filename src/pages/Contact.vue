@@ -18,7 +18,8 @@
     </v-fade-transition>
 
     <v-row>
-      <v-col cols="12" sm="6">
+      <v-col cols="12" sm="6"
+         form @submit.prevent="submitForm">
         <v-text-field
           label="Votre nom"
           solo
@@ -47,12 +48,19 @@
           solo
           placeholder="Text"
           required
-        ></v-text-field
-        ><br />
+        ></v-text-field>
+        <br>
+        <v-btn squared
+            variant="primary"
+            :class="[name ? activeClass : '']"
+            type="submit">Envoyer</v-btn>
+
+            <p v-if="response">{{ response }}</p>
+            
       </v-col>
     </v-row>
 
-    <v-btn> Submit </v-btn>
+    
 
     <!--titre la team-->
     <v-row>
