@@ -204,6 +204,12 @@
 
 
 <script>
+export default {
+  name: "Agence",
+            created () {
+            document.title = "L'agence | Agence de voyage à Genève";
+        },
+}
 </script>
 
 
