@@ -1,41 +1,61 @@
 <template>
-<div>
-<footer class="section bg-footer">
-        <div class="container">
-
-
-
-
-                <div class="col-12">
-                    <div class="">
-                        <h6 class="footer-heading text-uppercase text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</h6>
-                        <div class="mt-5">
-                            <ul class="list-inline">
-                                <li class="list-inline-item"><a href="#"><i class="fab facebook footer-social-icon fa-facebook-f"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fab twitter footer-social-icon fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fab google footer-social-icon fa-google"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fab apple footer-social-icon fa-apple"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
+  <div>
+    <footer class="section bg-footer">
+      <div class="container">
+        <div class="col-12">
+          <div class="">
+            <h6 class="footer-heading text-uppercase text-white">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore
+            </h6>
+            <div class="mt-5">
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <b-col class="mb-2">
+                  </b-col>
+                </li>
+                <li class="list-inline-item">
+                  <b-icon
+                    icon="facebook"
+                    style="width: 40px; height: 40px; color: white"
+                  ></b-icon>
+                </li>
+                <li class="list-inline-item">
+                  <b-icon
+                    icon="twitter"
+                    style="width: 40px; height: 40px; color: white"
+                  ></b-icon>
+                </li>
+                <li class="list-inline-item">
+                  <b-icon
+                    icon="instagram"
+                    style="width: 40px; height: 40px; color: white"
+                  ></b-icon>
+                </li>
+                <li class="list-inline-item">
+                  <b-icon
+                    icon="google"
+                    style="width: 40px; height: 40px; color: white"
+                  ></b-icon>
+                </li>
+                <li class="list-inline-item">
+                  <b-icon
+                    icon="linkedin" style="width: 40px; height: 40px; color: white"
+                  ></b-icon>
+                </li>
+              </ul>
             </div>
-        
-
-        
-         
-        
+          </div>
+        </div>
+      </div>
+      <h6 class="text-uppercase text-white">
+        COPYRIGHT © 2021 AGENCE DE VOYAGE
+      </h6>
     </footer>
-    </div>
+  </div>
 </template>
 
 <script>
-export default {
-  data: () => ({
-    icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
-  }),
-};
 </script>
 
 <style>

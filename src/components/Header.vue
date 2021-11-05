@@ -1,33 +1,38 @@
 <template>
-  <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand href="#">NavBar</b-navbar-brand>
+  <b-navbar toggleable="lg">
+    <b-navbar-brand to="/"
+      ><img
+        height="60px"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/TUI-Travel-Logo.svg/426px-TUI-Travel-Logo.svg.png"
+    /></b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-    <b-collapse id="nav-collapse" is-nav>
+    <b-collapse id="nav-collapse textboja" style="color:#ffffff;" is-nav>
       <b-navbar-nav>
-        <b-nav-item href="#">Link</b-nav-item>
-        <b-nav-item href="#" disabled>Disabled</b-nav-item>
+        <b-nav-item  active to="/">ACCUEIL</b-nav-item>
+        <b-nav-item to="/Destination">DESTINATIONS</b-nav-item>
+        <b-nav-item to="/Agence">L'AGENCE</b-nav-item>
+        <b-nav-item style="color:#ffffff;" to="/Contact">CONTACT</b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto">
+      <b-navbar-nav class="ml-auto" style="margin-left: auto !important;">
         <b-nav-form>
-          <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
-          <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+          <b-form-input
+            size="sm"
+            class="mr-sm-2"
+            placeholder="Search"
+          ></b-form-input>
+          <b-button size="sm" class="my-2 my-sm-0" type="submit"
+            >Search</b-button
+          >
         </b-nav-form>
-
-        <b-nav-item-dropdown text="Lang" right>
-          <b-dropdown-item href="#">EN</b-dropdown-item>
-          <b-dropdown-item href="#">ES</b-dropdown-item>
-          <b-dropdown-item href="#">RU</b-dropdown-item>
-          <b-dropdown-item href="#">FA</b-dropdown-item>
-        </b-nav-item-dropdown>
 
         <b-nav-item-dropdown right>
           <!-- Using 'button-content' slot -->
           <template #button-content>
-            <em>User</em>
+            <em>LOGIN</em>
           </template>
           <b-dropdown-item href="#">Profile</b-dropdown-item>
           <b-dropdown-item href="#">Sign Out</b-dropdown-item>
@@ -58,11 +63,8 @@ export default {
 </script>
 
 <style>
-#color {
-  color: rgb(13, 114, 155);
-  margin-top: 20px;
-}
-.overflow-hidden {
-  margin-bottom: -40px;
+#textboja {
+  color:black !important;
+  font-size: 16px;
 }
 </style>
