@@ -93,7 +93,7 @@ const axios = require("axios"); // import axios to use the REST API
 export default {
   name: "Destination",
   created() {
-    document.title = "Manga | Listes des mangas";
+    document.title = "Destination | Agence de voyage à Genève";
   },
   components: {
     // our components
