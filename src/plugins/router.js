@@ -12,6 +12,7 @@ import Destination from "../pages/Destination";
 import Poster from "../pages/Poster";
 import List from "../pages/List";
 import Register from "../pages/Register";
+import Login from "../pages/Login";
 
 
 const routes = [
@@ -23,6 +24,7 @@ const routes = [
     { path: '/poster', component: Poster },
     { path: '/list', component: List },
     { path: '/register', component: Register },
+    { path: '/login', component: Login }
 ]
 
 export default new VueRouter({

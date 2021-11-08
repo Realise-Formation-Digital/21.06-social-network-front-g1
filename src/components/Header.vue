@@ -27,6 +27,7 @@
           </template>
           <b-dropdown-item to="/Poster">Ajouter une ville</b-dropdown-item>
           <b-dropdown-item to="/List">Listes villes</b-dropdown-item>
+          <b-dropdown-item to="/Register">Register</b-dropdown-item>
           <b-dropdown-item href="#">Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>^
 

@@ -21,17 +21,41 @@
         <div class="card-header">Ajouter des utilisateurs</div>
         <div class="card-body">
           <div class="form-group padding10">
-            <input type="text" class="form-control" ref="name" placeholder="nom d'utilisateur" />
+            <input
+              type="text"
+              class="form-control"
+              ref="name"
+              placeholder="Nom d'utilisateur"
+            />
           </div>
           <div class="form-group padding10">
-            <input type="text" class="form-control" ref="email" placeholder="Email" />
+            <input
+              type="text"
+              class="form-control"
+              ref="email"
+              placeholder="Email"
+            />
           </div>
           <div class="form-group padding10">
-            <input type="text" class="form-control" ref="password" placeholder="Le mot de passe" />
+            <input
+              type="text"
+              class="form-control"
+              ref="password"
+              placeholder="Le mot de passe"
+            />
           </div>
-          <button class="btn btn-sm btn-primary padding10 ididesno" @click="postData">Ajouter</button>
+          <button
+            class="btn btn-sm btn-primary padding10 ididesno"
+            @click="postData"
+          >
+            Ajouter
+          </button>
 
-          <div v-if="postResult" class="alert alert-secondary mt-2 rezultatneki" role="alert">
+          <div
+            v-if="postResult"
+            class="alert alert-secondary mt-2 rezultatneki"
+            role="alert"
+          >
             <pre>{{ postResult }}</pre>
           </div>
         </div>
@@ -61,9 +85,9 @@ export default {
 
     async postData() {
       const postData = {
-        name: this.$refs.name.value,
-        desc: this.$refs.email.value,
-        img: this.$refs.password.value,
+        username: this.$refs.name.value,
+        email: this.$refs.email.value,
+        password: this.$refs.password.value,
       };
 
       try {

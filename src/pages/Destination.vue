@@ -55,34 +55,17 @@
           >
         </b-row>
         <p></p>
+        <div class="ui labeled button mt-5 ml-5" tabindex="0">
+          <div class="ui blue button">
+            <i class="fas fa-thumbs-up"></i>
+          </div>
+          <span class="ui basic blue label">0</span>
+        </div>
 
         <b-card-text>
           {{ selectedVille && selectedVille.desc }}
         </b-card-text>
       </b-card>
-
-      <!-- <b-card no-body class="overflow-hidden" style="max-width: 540px">
-          <b-row no-gutters>
-            <b-col md="6">
-              <b-card-img
-                :src="selectedVille && selectedVille.img"
-                :alt="selectedVille && selectedVille.name"
-                class="rounded-0"
-              ></b-card-img>
-              <a :href="selectedVille && selectedVille.url" target="_blank"
-                >LIEN EXTERNE</a
-              >
-            </b-col>
-            <b-col md="6">
-              <b-card-body :title="selectedVille && selectedVille.name">
-                KANDJI:{{ selectedVille && selectedVille.name_kanji }}<br />
-                <b-card-text class="tekstba">
-                  {{ selectedVille && selectedVille.about }}
-                </b-card-text>
-              </b-card-body>
-            </b-col>
-          </b-row>
-        </b-card> -->
     </b-modal>
   </div>
 </template>
@@ -139,12 +122,18 @@ export default {
         m.title.toLowerCase().includes(searchedWord.toLowerCase())
       );
     },
+    increment(index) {
+      this.comments[index].counter.likes++;
+    },
+    decrement(index) {
+      this.comments[index].counter.dislikes++;
+    },
   },
 };
 </script>
 
 <style>
 .rodjakimagemodal {
-  max-width: 1024px;
+  max-width: 1024px !important;
 }
 </style>

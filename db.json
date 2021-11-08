@@ -59,13 +59,6 @@
       "like": 1,
       "author": "Samir",
       "date": "25/05/2020"
-    },
-    {
-      "name": "1",
-      "desc": "1",
-      "img": "1",
-      "date": "1",
-      "id": 7
     }
   ],
   "users": [
@@ -86,6 +79,42 @@
       "desc": "eneze@gmail.com",
       "img": "edin",
       "id": 3
+    },
+    {
+      "name": "Saras",
+      "desc": "sara@covid.ch",
+      "img": "123456",
+      "id": 4
+    },
+    {
+      "name": "dawit",
+      "desc": "ok@msn.com",
+      "img": "123456",
+      "id": 5
+    },
+    {
+      "name": "maco",
+      "desc": "maco@msmns.cc",
+      "img": "eere",
+      "id": 6
+    },
+    {
+      "name": "maco",
+      "desc": "maco@msmns.cc",
+      "img": "eere",
+      "id": 7
+    },
+    {
+      "name": "fdfdf",
+      "desc": "fdf",
+      "img": "dfdf",
+      "id": 8
+    },
+    {
+      "username": "2222222",
+      "email": "222222222222222",
+      "password": "222222222222222222222222222",
+      "id": 9
     }
   ]
 }

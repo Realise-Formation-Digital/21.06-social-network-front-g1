@@ -17,6 +17,7 @@
 
     <!-- CONTENT OF PAGE !-->
     <div id="poster" class="container">
+                <b-button variant="success" to="/List">List</b-button>
       <div class="card">
         <div class="card-header">Ajouter des villes</div>
         <div class="card-body">
