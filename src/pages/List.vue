@@ -17,6 +17,7 @@
 
     <!-- CONTENT OF PAGE !-->
     <b-container class="bv-example-row margintop80px">
+          <b-button variant="success" to="/Poster">Ajouter</b-button>
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -42,8 +43,7 @@
           <td>{{ city.like }}</td>
           <td>{{ city.coms }}</td>
           <td>
-            <b-button variant="danger" @click="delCity(id)">EFFACER</b-button>
-            <b-button variant="success">VOIR</b-button>
+            <b-button variant="danger" @click="delCity(city)">EFFACER</b-button>
           </td>
         </tr>
       </tbody>
@@ -100,11 +100,12 @@ export default {
       // Stock the result in dynamic variable that connect HTML and JS
       this.cities = result.data;
     },
-    async delCity(id) {
-      console.log("remove", id);
-      const result = await axios.delete("http://localhost:3000/city/" + id);
-      console.log("result", result);
-      this.cities = result.data;
+    async delCity(city) {
+      console.log("remove", city);
+      await axios.delete("http://localhost:3000/city/" + city.id);
+      this.cities = this.cities.filter(c => c.id != city.id);
+      // console.log("this.cities", this.cities);
+      // this.cities = result.data;
     },
     searchManga() {
       this.searchedManga = [];

@@ -55,6 +55,7 @@
           >
         </b-row>
         <p></p>
+ 
 
         <b-card-text>
           {{ selectedVille && selectedVille.desc }}
@@ -110,6 +111,21 @@ export default {
       selectedVille: null,
       searchedManga: [],
       search: null,
+      comments: [{
+          id: 1,
+          counter: {
+            likes: 0,
+            dislikes: 0
+          }
+        },
+        {
+          id: 2,
+          counter: {
+            likes: 0,
+            dislikes: 0
+          }
+        },
+      ],
     };
   },
   methods: {
@@ -139,12 +155,18 @@ export default {
         m.title.toLowerCase().includes(searchedWord.toLowerCase())
       );
     },
+        increment(index) {
+      this.comments[index].counter.likes++;
+    },
+    decrement(index) {
+      this.comments[index].counter.dislikes++;
+    },
   },
 };
 </script>
 
 <style>
 .rodjakimagemodal {
-  max-width: 1024px;
+  max-width: 1024px !important;
 }
 </style>
