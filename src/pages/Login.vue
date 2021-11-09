@@ -17,38 +17,60 @@
 
     <!-- CONTENT OF PAGE !-->
 
-        <form v-on:submit="login">    EMAIL:
-            <input type="text" name="email" /><br>    
-            PASSWORD:
-            <input type="password" name="password" /><br>    
-            <input type="submit" value="Login" />    
-        </form>    
-
-
-
-
-
-
-
-
-
-
+    <b-container>
+      <div class="login">
+        <input type="text" v-model="email" placeholder="Email" /><br />
+        <br />
+        <input
+          type="password"
+          v-model="password"
+          placeholder="Password"
+        /><br />
+        <br />
+        <button v-on:click="login">LOGIN</button> <br />
+      </div>
+    </b-container>
   </div>
 </template>
 
 
 <script>
-
-
+import axios from "axios";
 export default {
-  name: "Register",
+  name: "Login",
   created() {
     document.title = "Se connecter de utilisateurs | Administration";
+  },
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    token() {
+      return localStorage.getItem("token");
+    },
+    async login() {
+      const result = await axios.post("http://localhost:3000/users", {
+        email: this.email,
+        password: this.password,
+      });
+      console.log("Status", result.status);
+      if (
+        result.status === 201 ||
+        (result.status === 200 && result.data.length > 0)
+      ) {
+        localStorage.setItem("token", "abcd");
+       // this.$router.push({ name: "Login" })
+      } else {
+        console.log("User not exist")
+      }
+    },
   },
 };
 </script>
 
 
 <style scoped>
-
 </style>
