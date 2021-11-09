@@ -8,7 +8,7 @@
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-    <b-collapse id="nav-collapse" style="color:#ffffff;" is-nav>
+    <b-collapse id="nav-collapse" style="color: #ffffff" is-nav>
       <b-navbar-nav>
         <b-nav-item to="/">ACCUEIL</b-nav-item>
         <b-nav-item to="/Destination">DESTINATIONS</b-nav-item>
@@ -17,21 +17,20 @@
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto" style="margin-left: auto !important;">
-
-
+      <b-navbar-nav class="ml-auto" style="margin-left: auto !important">
+        <b-button v-if="!onlogin()" to="/Register">Register</b-button>
+        <b-button v-if="!onlogin()" to="/Login">Login</b-button>
         <b-nav-item-dropdown right>
           <!-- Using 'button-content' slot -->
           <template #button-content>
-            <em>LOGIN</em>
+            <em v-if="onlogin()">ADMIN</em>
           </template>
           <b-dropdown-item to="/Poster">Ajouter une ville</b-dropdown-item>
           <b-dropdown-item to="/List">Listes villes</b-dropdown-item>
-          <b-dropdown-item to="/Register">Register</b-dropdown-item>
-          <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-        </b-nav-item-dropdown>^
+          <b-dropdown-item @click="RemoveToken()" >Sign Out</b-dropdown-item>
+        </b-nav-item-dropdown>
 
-                <b-nav-form>
+        <b-nav-form>
           <b-form-input
             size="sm"
             class="mr-sm-2"
@@ -59,8 +58,13 @@ export default {
     onclickSearch() {
       this.showSearch = !this.showSearch;
     },
-    onclickLogin() {
-      this.showLogin = !this.showLogin;
+    RemoveToken() {
+      localStorage.removeItem("token");
+    },
+    onlogin() {
+      const token = localStorage.getItem("token");
+      return !!token;
+      //return !!token;
     },
   },
 };
@@ -68,7 +72,7 @@ export default {
 
 <style>
 #textboja {
-  color:black !important;
+  color: black !important;
   font-size: 16px;
 }
 </style>
