@@ -6,6 +6,8 @@
       :interval="4000"
       controls
       indicators
+      img-height="100%"
+      img-width="100%"
       background="#ababab"
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
