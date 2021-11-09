@@ -5,7 +5,7 @@
     <b-container class="pading60">
       <div>
         <b-row>
-          <b-col class="col-6">
+          <b-col cols="" sm="" md="" lg="" xl="*">
             <div>
               <b-card
                 title="Sarajevo"
@@ -22,7 +22,7 @@
               </b-card>
             </div>
           </b-col>
-          <b-col cols="6">
+          <b-col cols="" sm="" md="" lg="" xl="*">
             <b-card
               title="Bern"
               img-src="img/Bern.jpg"
@@ -51,7 +51,7 @@
     <b-container class="pading60">
       <div>
         <b-row>
-          <b-col class="col-4">
+          <b-col cols="" sm="" md="" lg="" xl="*">
             <div>
               <b-card
                 title="Genève"
@@ -59,33 +59,33 @@
                 img-alt="Image"
                 tag="article"
                 style="max-width: 100%"
-                :img-height="360"
                 align="center"
+                height:auto
               >
               </b-card>
             </div>
           </b-col>
-          <b-col cols="4">
+          <b-col cols="" sm="" md="" lg="" xl="*">
             <b-card
               title="New York"
               img-src="img/Ny.jpg"
               img-alt="Image"
               tag="article"
               style="max-width: 100%"
-              :img-height="360"
               align="center"
+              height:auto
             >
             </b-card>
           </b-col>
-          <b-col cols="4">
+          <b-col cols="" sm="" md="" lg="" xl="*">
             <b-card
               title="Japon"
               img-src="img/Japon.jpg"
               img-alt="Image"
               tag="article"
               style="max-width: 100%"
-              :img-height="360"
               align="center"
+              height:auto
             >
             </b-card>
           </b-col>
@@ -97,15 +97,20 @@
 
     <b-container class="pading200">
       <b-row>
-        <b-col cols="8"> </b-col>
+        <b-col cols="8">
+         </b-col>
         <b-col cols="2">
           <div>
-            <b-button to="/Register" size="lg" variant="primary">Join Today</b-button>
+            <b-button to="/Register" size="lg" variant="primary"
+              >Join
+            </b-button>
           </div>
         </b-col>
         <b-col cols="2">
           <div>
-            <b-button to="/Contact" size="lg" variant="outline-primary">Contact</b-button>
+            <b-button to="/Contact" size="lg" variant="outline-primary"
+              >Contact</b-button
+            >
           </div>
         </b-col>
       </b-row>
