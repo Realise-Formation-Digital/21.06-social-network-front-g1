@@ -95,26 +95,24 @@
 
     <!-- Troisième Partie -->
 
-    <b-container class="pading200">
-      <b-row>
-        <b-col cols="8">
-         </b-col>
-        <b-col cols="2">
-          <div>
-            <b-button to="/Register" size="lg" variant="primary"
-              >Join
-            </b-button>
-          </div>
-        </b-col>
-        <b-col cols="2">
-          <div>
-            <b-button to="/Contact" size="lg" variant="outline-primary"
+    <b-container class="bv-example-row">
+  <b-row>
+    <b-col sm="8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore</b-col>
+    <b-col sm="4">
+
+      <!-- 1BUTTON !-->
+      <b-col sm="12"     md="6"     lg="2"     xl="*"><b-button to="/Register" size="lg" variant="primary">Join</b-button></b-col>
+
+        <!--2BUTTON!-->
+         <b-col sm="12"    md="6"     lg="2"     xl="*"><b-button to="/Contact" size="lg" variant="outline-primary"
               >Contact</b-button
-            >
-          </div>
-        </b-col>
-      </b-row>
-    </b-container>
+            ></b-col>
+
+
+    </b-col>
+  </b-row>
+</b-container>
   </div>
 </template>
 
