@@ -14,7 +14,7 @@
       </b-row>
     </b-container>
     <b-container fluid>
-      <b-container>
+      <b-container fluid>
         <b-container class="bv-example-row padding80">
           <b-row>
             <b-col>
@@ -28,22 +28,16 @@
                 <b-container class="bv-example-row padding80">
                   <b-row>
                     <b-col>
-                      <b-card-body>
-                        <b-card-text>
-                          <button type="button" class="btn btn-primary">
-                            022 422 33 66
-                          </button>
-                        </b-card-text>
-                      </b-card-body>
+                      <button type="button">
+                        022 422 33 66
+                      </button>
                     </b-col>
                     <b-col>
-                      <b-card-body>
-                        <b-card-text>
-                          <button type="button" class="btn btn-primary">
+                  
+                          <button type="button">
                             022 422 33 66
                           </button>
-                        </b-card-text>
-                      </b-card-body>
+                  
                     </b-col>
                   </b-row>
                 </b-container></b-row
@@ -51,54 +45,82 @@
             </b-col>
 
             <b-col>
-              <div class="contact">
-                <input
-                  id="name"
-                  type="text"
-                  v-model="name"
-                  placeholder="Nom"
-                  required
-                />
-                <input
-                  id="prenom"
-                  type="text"
-                  v-model="prenom"
-                  placeholder="Prénom"
-                  required
-                /><br />
-                <input
-                  id="email"
-                  type="text"
-                  v-model="email"
-                  placeholder="Adresse Email"
-                  required
-                /><br />
-                <input
-                  id="prenom"
-                  type="text"
-                  v-model="prenom"
-                  placeholder="Prénom"
-                  required
-                /><br />
-                <textarea
-                  placeholder="Message"
-                  id="message"
-                  type="text"
-                  rows="3"
-                  v-model="message"
-                  required
-                /><br /><br />
-                <b-button
-                  squared
-                  variant="primary"
-                  :class="[name ? activeClass : '']"
-                  @click="submitForm()"
-                  >Envoyer</b-button
-                >
-                <div>
-                  <h5>
-                    <p b-if="response">{{ response }}</p>
-                  </h5>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input
+                      id="form_name"
+                      type="text"
+                      v-model="name"
+                      name="name"
+                      class="form-control"
+                      placeholder="Nom"
+                      required="required"
+                      data-error="Firstname is required."
+                    />
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input
+                      id="form_lastname"
+                      type="text"
+                      v-model="prenom"
+                      name="surname"
+                      class="form-control"
+                      placeholder="Prénom"
+                      required="required"
+                      data-error="Lastname is required."
+                    />
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <input
+                      id="form_email"
+                      type="email"
+                      v-model="email"
+                      name="email"
+                      class="form-control"
+                      placeholder="Adresse Email"
+                      required="required"
+                      data-error="Valid email is required."
+                    />
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <textarea
+                      id="form_message"
+                      name="message"
+                      v-model="message"
+                      class="form-control"
+                      placeholder="Message"
+                      rows="4"
+                      required
+                      data-error="Please,leave us a message."
+                    ></textarea>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+                <div class="sendbutton col-md-12">
+                  <br />
+                  <b-button
+                    squared
+                    variant="primary"
+                    :class="[name ? activeClass : '']"
+                    @click="submitForm()"
+                    >Envoyer</b-button
+                  >
                 </div>
               </div>
             </b-col>
@@ -106,7 +128,7 @@
         </b-container>
 
         <!-- Maps -->
-        <b-container fluid>
+        <b-container class="contact" fluid>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2761.877517634499!2d6.126591315581985!3d46.192995979116255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c7b2e1299827b%3A0xb6bbc30dd8e5306f!2zUsOpYWxpc2U!5e0!3m2!1sfr!2sch!4v1636465081519!5m2!1sfr!2sch"
             width="100%"
@@ -134,6 +156,7 @@ export default {
   data() {
     return {
       name: "",
+      prenom: "",
       email: "",
       message: "",
       response: "",
@@ -146,6 +169,7 @@ export default {
       axios
         .post("http://localhost:3000/mails", {
           name: this.name,
+          prenom: this.prenom,
           email: this.email,
           message: this.message,
         })
@@ -159,6 +183,7 @@ export default {
           this.response = "Error: " + error.response.status;
         });
       this.name = "";
+      this.prenom = "";
       this.email = "";
       this.message = "";
     },
@@ -179,9 +204,19 @@ export default {
   padding: 80px;
 }
 #name {
-  width: 90%;
+  width: 284px;
+}
+#prenom {
+  width: 284px;
 }
 #email {
   width: 100%;
+}
+.contact {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+.sendbutton {
+  float: right;
 }
 </style>
