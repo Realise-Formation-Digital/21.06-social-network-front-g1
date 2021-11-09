@@ -23,11 +23,11 @@
         <b-nav-item-dropdown right>
           <!-- Using 'button-content' slot -->
           <template #button-content>
-            <em v-if="!!onlogin()">ADMIN</em>
+            <em v-if="onlogin()">ADMIN</em>
           </template>
           <b-dropdown-item to="/Poster">Ajouter une ville</b-dropdown-item>
           <b-dropdown-item to="/List">Listes villes</b-dropdown-item>
-          <b-dropdown-item v-if="removelogin()" >Sign Out</b-dropdown-item>
+          <b-dropdown-item @click="RemoveToken()" >Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
 
         <b-nav-form>
@@ -58,16 +58,11 @@ export default {
     onclickSearch() {
       this.showSearch = !this.showSearch;
     },
-    onclickLogin() {
-      this.showLogin = !this.showLogin;
+    RemoveToken() {
+      localStorage.removeItem("token");
     },
     onlogin() {
       const token = localStorage.getItem("token");
-      return !!token;
-      //return !!token;
-    },
-    removelogin() {
-      const token = localStorage.removeItem("token");
       return !!token;
       //return !!token;
     },

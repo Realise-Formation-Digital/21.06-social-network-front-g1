@@ -62,7 +62,7 @@ export default {
         (result.status === 200 && result.data.length > 0)
       ) {
         localStorage.setItem("token", "abcd");
-       // this.$router.push({ name: "Login" })
+        this.$router.push({ name: "/" })
       } else {
         console.log("User not exist")
       }
