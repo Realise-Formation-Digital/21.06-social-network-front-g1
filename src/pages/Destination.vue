@@ -122,12 +122,6 @@ export default {
         m.title.toLowerCase().includes(searchedWord.toLowerCase())
       );
     },
-    increment(index) {
-      this.comments[index].counter.likes++;
-    },
-    decrement(index) {
-      this.comments[index].counter.dislikes++;
-    },
   },
 };
 </script>
