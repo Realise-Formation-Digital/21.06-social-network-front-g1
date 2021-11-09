@@ -26,21 +26,14 @@
               </b-card-body>
               <b-row>
                 <b-container class="bv-example-row padding80">
-                  <b-row>
-                    <b-col>
-                      <button type="button">
-                        022 422 33 66
-                      </button>
-                    </b-col>
-                    <b-col>
-                  
-                          <button type="button">
-                            022 422 33 66
-                          </button>
-                  
-                    </b-col>
-                  </b-row>
-                </b-container></b-row
+  <b-row>
+    <b-col>  <b-button variant="success">0224223366</b-button></b-col> 
+    <b-col>  <b-button variant="success">info@admin.ch</b-button></b-col>
+  </b-row>
+                </b-container>
+                <b-container class="bv-example-row">
+</b-container>
+                </b-row
               >
             </b-col>
 
