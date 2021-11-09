@@ -116,5 +116,49 @@
       "password": "222222222222222222222222222",
       "id": 9
     }
+  ],
+  "mails": [
+    {
+      "id": 1,
+      "name": "admin",
+      "email": "admin@admin.ch",
+      "password": "admin"
+    },
+    {
+      "name": "",
+      "email": "",
+      "message": "",
+      "id": 2
+    },
+    {
+      "name": "fdgs",
+      "email": "sdfgsdfg",
+      "message": "sdfgg",
+      "id": 3
+    },
+    {
+      "name": "uiouipuiopuiop",
+      "email": "uiouoipui",
+      "message": "uiopuiop",
+      "id": 4
+    },
+    {
+      "name": "lori",
+      "email": "dsffffg",
+      "message": "sdsdsdsd",
+      "id": 5
+    },
+    {
+      "name": "",
+      "email": "",
+      "message": "",
+      "id": 6
+    },
+    {
+      "name": "",
+      "email": "",
+      "message": "",
+      "id": 7
+    }
   ]
 }
