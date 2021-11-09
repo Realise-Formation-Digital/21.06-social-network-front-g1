@@ -30,7 +30,7 @@
       <b-row>
         <b-col cols="12" sm="6">
           <div>
-            <label for="name">Name:</label><br />
+            <label for="name">Nom:</label><br />
             <input id="name" type="text" v-model="name" required />
           </div>
         </b-col>
@@ -93,7 +93,7 @@
       </b-row>
 
       <b-overlay mode="out-in">
-        <b-row>
+        <b-row><overflow-y>
           <b-col cols="3">
             <b-card>
               <b-img
@@ -102,9 +102,8 @@
                 class="grey darken-4"
               >
               </b-img>
-              <b-card-title></b-card-title>
               <b-card-text class="text-h6"
-                >Edin Ibrahimovic<br />Grad Sarajevo</b-card-text
+                >Edin Ibrahimovic<br/>Grad Sarajevo</b-card-text
               >
             </b-card>
           </b-col>
@@ -147,7 +146,7 @@
                 >Davide<br />Tomar cidade</b-card-text
               >
             </b-card>
-          </b-col>
+          </b-col></overflow-y>
         </b-row>
       </b-overlay>
 
