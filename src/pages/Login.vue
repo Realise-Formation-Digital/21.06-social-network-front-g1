@@ -4,32 +4,34 @@
     <b-container class="hslika" fluid>
       <b-row class="text-center">
         <b-col></b-col>
-        <b-col class="textitre" cols="12">GESTION UTILISATEUR</b-col>
+        <b-col class="textitre" cols="12">SE CONNECTER</b-col>
       </b-row>
       <b-row class="text-center">
         <b-col></b-col>
         <b-col class="textp" cols="12">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore
+          Veuillez saisir votre adresse e-mail et votre mot de passe.
         </b-col>
       </b-row>
     </b-container>
 
     <!-- CONTENT OF PAGE !-->
 
-    <b-container>
-      <div class="login">
-        <input type="text" v-model="email" placeholder="Email" /><br />
+    <b-container fluid class="bv-example-row padding100">
+     
+  <b-row>
+      <b-col md="6" offset-md="3">
+         Se connecter <br>
+      <div class="login"><br>
+             <b-form-input id="inp" type="email" v-model="email" placeholder="Email"></b-form-input>
         <br />
-        <input
-          type="password"
-          v-model="password"
-          placeholder="Password"
-        /><br />
+         <b-form-input id="inp" type="password" v-model="password" placeholder="Mot de passe"></b-form-input>
+
         <br />
-        <button v-on:click="login">LOGIN</button> <br />
-      </div>
-    </b-container>
+          <b-button v-on:click="login" variant="primary">VALIDER</b-button> <br />
+      </div><br><br>
+      </b-col>
+      </b-row>
+</b-container>
   </div>
 </template>
 
@@ -73,4 +75,11 @@ export default {
 
 
 <style scoped>
+#inp {
+  max-width: 300px;
+}
+.padding100 {
+  margin-top: 100px;;
+
+}
 </style>

@@ -4,58 +4,37 @@
     <b-container class="hslika" fluid>
       <b-row class="text-center">
         <b-col></b-col>
-        <b-col class="textitre" cols="12">GESTION UTILISATEUR</b-col>
+        <b-col class="textitre" cols="12">S'INSCRIRE</b-col>
       </b-row>
       <b-row class="text-center">
         <b-col></b-col>
-        <b-col class="textp" cols="12">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore
-        </b-col>
+        <b-col class="textp" cols="12">Inscription à votre espace client en ligne</b-col>
       </b-row>
     </b-container>
 
     <!-- CONTENT OF PAGE !-->
     <div id="poster" class="container">
       <div class="card">
-        <div class="card-header">Ajouter des utilisateurs</div>
+        <div class="card-header">
+          Merci de renseigner tous les champs ci-dessous pour pouvoir valider
+          votre inscription.
+        </div>
         <div class="card-body">
           <div class="form-group padding10">
-            <input
-              type="text"
-              class="form-control"
-              ref="name"
-              placeholder="Nom d'utilisateur"
-            />
+            <input type="text" class="form-control" ref="name" placeholder="Nom d'utilisateur" />
           </div>
           <div class="form-group padding10">
-            <input
-              type="text"
-              class="form-control"
-              ref="email"
-              placeholder="Email"
-            />
+            <input type="text" class="form-control" ref="email" placeholder="Email" />
           </div>
           <div class="form-group padding10">
-            <input
-              type="text"
-              class="form-control"
-              ref="password"
-              placeholder="Le mot de passe"
-            />
+            <input type="text" class="form-control" ref="password" placeholder="Le mot de passe" />
           </div>
           <button
             class="btn btn-sm btn-primary padding10 ididesno"
             @click="postData"
-          >
-            Ajouter
-          </button>
+          >S'inscrire maintenant</button>
 
-          <div
-            v-if="postResult"
-            class="alert alert-secondary mt-2 rezultatneki"
-            role="alert"
-          >
+          <div v-if="postResult" class="alert alert-secondary mt-2 rezultatneki" role="alert">
             <pre>{{ postResult }}</pre>
           </div>
         </div>

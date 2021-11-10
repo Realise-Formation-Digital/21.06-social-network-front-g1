@@ -5,8 +5,8 @@
         <div class="col-12">
           <div class="">
             <h6 class="footer-heading text-uppercase text-white">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore
+              MAIS C’EST SÛR. CHEZ NOUS, VOS VACANCES SONT ENTRE DE BONNES MAINS.
+
             </h6>
             <div class="mt-5">
               <ul class="list-inline">
