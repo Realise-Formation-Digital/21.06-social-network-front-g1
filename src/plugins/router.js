@@ -16,7 +16,7 @@ import Login from "../pages/Login";
 
 
 const routes = [
-    { path: '/', component: Home },
+    { path: '/', component: Home, name: "home" },
     { path: '/agence', component: Agence },
     { path: '/contact', component: Contact },
     { path: '/destination', component: Destination },

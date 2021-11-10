@@ -66,7 +66,7 @@
 
 
 <script>
-const baseURL = "http://localhost:3000";
+const baseURL = "http://127.0.0.1:8000/api/";
 
 export default {
   name: "Register",
@@ -91,7 +91,7 @@ export default {
       };
 
       try {
-        const res = await fetch(`${baseURL}/users`, {
+        const res = await fetch(`${baseURL}users`, {
           method: "post",
           headers: {
             "Content-Type": "application/json",
