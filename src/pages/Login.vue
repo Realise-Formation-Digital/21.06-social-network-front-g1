@@ -52,17 +52,17 @@ export default {
       return localStorage.getItem("token");
     },
     async login() {
-      const result = await axios.post("http://localhost:3000/users", {
+      const result = await axios.post("http://127.0.0.1:8000/api/signin", {
         email: this.email,
         password: this.password,
       });
-      console.log("Status", result.status);
+      console.log("result", result);
       if (
         result.status === 201 ||
-        (result.status === 200 && result.data.length > 0)
+        (result.status === 200 && result.data.token)
       ) {
-        localStorage.setItem("token", "abcd");
-        this.$router.push({ name: "/" })
+        localStorage.setItem("token", result.data.token);
+        this.$router.push({ name: "home" })
       } else {
         console.log("User not exist")
       }

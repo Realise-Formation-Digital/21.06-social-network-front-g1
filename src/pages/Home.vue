@@ -94,25 +94,23 @@
     </b-container>
 
     <!-- Troisième Partie -->
-
-    <b-container class="bv-example-row">
-  <b-row>
-    <b-col sm="8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore</b-col>
-    <b-col sm="4">
-
-      <!-- 1BUTTON !-->
-      <b-col sm="12"     md="6"     lg="2"     xl="*"><b-button to="/Register" size="lg" variant="primary">Join</b-button></b-col>
-
-        <!--2BUTTON!-->
-         <b-col sm="12"    md="6"     lg="2"     xl="*"><b-button to="/Contact" size="lg" variant="outline-primary"
-              >Contact</b-button
-            ></b-col>
-
-
-    </b-col>
-  </b-row>
-</b-container>
+    <br>
+    <b-container class="bv-example-row" style="padding-top:80px;">
+      <b-row>
+        <b-col style="font-size:26px; font-weight:900" sm="12">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore</b-col
+        >
+        <b-col cols="2"><b-button to="/Register" size="lg" variant="primary"
+            >Join</b-button
+          ></b-col
+        >
+        <b-col col lg="2"><b-button to="/Contact" class="right12" size="lg" variant="outline-primary"
+            >Contact</b-button
+          ></b-col
+        >
+      </b-row>
+      <br> <br> <br> <br>
+    </b-container>
   </div>
 </template>
 
@@ -133,5 +131,8 @@ export default {
 }
 .pading200 {
   margin-top: 200px;
+}
+.right12 {
+  float: right;
 }
 </style>
