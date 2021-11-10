@@ -11,6 +11,7 @@ padding-left: 20px;"
 
     <b-collapse id="nav-collapse" style="color: #ffffff" is-nav>
       <b-navbar-nav>
+        <b-nav-item to="/Search"><img height="30px" src="https://cdn.icon-icons.com/icons2/488/PNG/512/search_47686.png"><img/></b-nav-item>
         <b-nav-item to="/">ACCUEIL</b-nav-item>
         <b-nav-item to="/Destination">DESTINATIONS</b-nav-item>
         <b-nav-item to="/Agence">L'AGENCE</b-nav-item>

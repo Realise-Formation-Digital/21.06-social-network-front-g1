@@ -18,6 +18,7 @@
     <!-- CONTENT OF PAGE !-->
     <b-container class="bv-example-row margintop80px">
           <b-button variant="success" to="/Poster">Ajouter</b-button>
+          <!-- Affiche le table de la ville !-->
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -33,6 +34,7 @@
         </tr>
       </thead>
       <tbody>
+        <!-- Boucle pour afficher les infos des villes !-->
         <tr v-for="(city, index) in cities" :key="index">
           <td>{{ city.id }}</td>
           <td><img v-bind:src="city.img" alt="city.name" width="80" /></td>
@@ -43,6 +45,7 @@
           <td>{{ city.like }}</td>
           <td>{{ city.coms }}</td>
           <td>
+            <!-- Boutton pour effacler la ville selectionné !-->
             <b-button variant="danger" @click="delCity(city)">EFFACER</b-button>
           </td>
         </tr>
@@ -54,23 +57,20 @@
 </template>
 
 <script>
-//import card from "../components/card.vue";
 const axios = require("axios"); // import axios to use the REST API
 export default {
   name: "List",
   created() {
+    // Titre de notre page
     document.title = "Gestion de ville | Administration";
   },
-  components: {
-    // our components
-  //  card,
-  },
+// funcs lancés
   mounted() {
     this.getCity();
     this.delCity();
   },
   data() {
-    // return data
+    // Retour de données
     return {
       cities: [],
       modalShow: false,
@@ -81,20 +81,9 @@ export default {
   },
 
   methods: {
-    handleEvent(message) {
-      console.log("Recu", message);
-    },
-    async handleselectedVille(id) {
-      console.log("ecoute", id);
-      this.selectedVille = null;
-      const caractereid = await axios.get("http://localhost:3000/city/41" + id);
-      console.log(caractereid);
-      //this.selectedVille = this.mangas.find((manga) => manga.id === id);
-      this.selectedVille = caractereid.data;
-      this.modalShow = true;
-    },
+
     async getCity() {
-      // Get the answer from the server (Punk Api) and stock it in result
+      // Get the answer from the server and stock it in result
       const result = await axios.get("http://localhost:3000/city/");
       console.log("result", result);
       // Stock the result in dynamic variable that connect HTML and JS
@@ -104,15 +93,6 @@ export default {
       console.log("remove", city);
       await axios.delete("http://localhost:3000/city/" + city.id);
       this.cities = this.cities.filter(c => c.id != city.id);
-      // console.log("this.cities", this.cities);
-      // this.cities = result.data;
-    },
-    searchManga() {
-      this.searchedManga = [];
-      const searchedWord = this.search;
-      this.searchedManga = this.mangas.filter((m) =>
-        m.title.toLowerCase().includes(searchedWord.toLowerCase())
-      );
     },
   },
 };

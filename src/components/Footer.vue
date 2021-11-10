@@ -59,6 +59,8 @@
 </script>
 
 <style>
+/**[ Notre style CSS ]**/
+
 .bg-footer {
   background-color: #33383c;
   padding: 50px 0 30px;
