@@ -16,8 +16,9 @@
     </b-container>
 
     <!-- CONTENT OF PAGE !-->
+    <!-- inputs nom de ville, desc, url img, et date !-->
     <div id="poster" class="container">
-                <b-button variant="success" to="/List">List</b-button>
+      <b-button variant="success" to="/List">List</b-button>
       <div class="card">
         <div class="card-header">Ajouter des villes</div>
         <div class="card-body">
@@ -79,9 +80,9 @@ const baseURL = "http://localhost:3000";
 
 export default {
   name: "Poster",
-              created () {
-            document.title = "Gestion de villes | Administration";
-              },
+  created() {
+    document.title = "Gestion de villes | Administration";
+  },
   data() {
     return {
       postResult: null,
@@ -91,7 +92,7 @@ export default {
     fortmatResponse(res) {
       return JSON.stringify(res, null, 2);
     },
-
+    // post le donné name, desc, img, date
     async postData() {
       const postData = {
         name: this.$refs.name.value,
@@ -109,15 +110,13 @@ export default {
           },
           body: JSON.stringify(postData),
         });
-
+        // si error l'affiché
         if (!res.ok) {
           const message = `An error has occured: ${res.status} - ${res.statusText}`;
           throw new Error(message);
         }
 
         const data = await res.json();
-
-        //const edin = "testing";
 
         const result = {
           status: res.status + "-" + res.statusText,

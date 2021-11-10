@@ -1,8 +1,9 @@
 <template>
   <b-navbar toggleable="lg">
     <b-navbar-brand to="/"
-      ><img
-        height="60px"
+      ><img style="padding-bottom: 20px;
+padding-left: 20px;"
+        height="60px" 
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/TUI-Travel-Logo.svg/426px-TUI-Travel-Logo.svg.png"
     /></b-navbar-brand>
 
@@ -10,6 +11,7 @@
 
     <b-collapse id="nav-collapse" style="color: #ffffff" is-nav>
       <b-navbar-nav>
+        <b-nav-item to="/Search"><img height="30px" src="https://cdn.icon-icons.com/icons2/488/PNG/512/search_47686.png"><img/></b-nav-item>
         <b-nav-item to="/">ACCUEIL</b-nav-item>
         <b-nav-item to="/Destination">DESTINATIONS</b-nav-item>
         <b-nav-item to="/Agence">L'AGENCE</b-nav-item>
@@ -20,9 +22,9 @@
       <b-navbar-nav class="ml-auto" style="margin-left: auto !important">
         <b-button v-if="!onlogin()" to="/Register">Register</b-button>
         <b-button v-if="!onlogin()" to="/Login">Login</b-button>
-        <b-nav-item-dropdown right>
+        <b-nav-item-dropdown v-if="onlogin()" right>
           <!-- Using 'button-content' slot -->
-          <template #button-content>
+          <template  #button-content>
             <em v-if="onlogin()">ADMIN</em>
           </template>
           <b-dropdown-item to="/Poster">Ajouter une ville</b-dropdown-item>
@@ -30,7 +32,7 @@
           <b-dropdown-item @click="RemoveToken()" >Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
 
-        <b-nav-form>
+        <b-nav-form style="display:none">
           <b-form-input
             size="sm"
             class="mr-sm-2"

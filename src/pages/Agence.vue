@@ -206,6 +206,7 @@
 <script>
 export default {
   name: "Agence",
+  // titre de notre page
             created () {
             document.title = "L'agence | Agence de voyage à Genève";
         },
