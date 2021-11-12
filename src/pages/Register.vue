@@ -4,28 +4,21 @@
     <b-container class="hslika" fluid>
       <b-row class="text-center">
         <b-col></b-col>
-        <b-col class="textitre" cols="12">S'INSCRIRE</b-col>
+        <b-col class="textitre" cols="12">GESTION UTILISATEUR</b-col>
       </b-row>
       <b-row class="text-center">
         <b-col></b-col>
-        <b-col class="textp" cols="12"
-          >Inscription à votre espace client en ligne</b-col
-        >
+        <b-col class="textp" cols="12">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore
+        </b-col>
       </b-row>
     </b-container>
 
     <!-- CONTENT OF PAGE !-->
-
-    <!-- inputs nom d'utilisateur email et mot de passe !-->
-       <b-container fluid class="bv-example-row padding100">
-      <b-row>
-        <b-col md="6" offset-md="3" sm="12">
     <div id="poster" class="container">
       <div class="card">
-        <div class="card-header">
-          Merci de renseigner tous les champs ci-dessous pour pouvoir valider
-          votre inscription.
-        </div>
+        <div class="card-header">Ajouter des utilisateurs</div>
         <div class="card-body">
           <div class="form-group padding10">
             <input
@@ -55,23 +48,19 @@
             class="btn btn-sm btn-primary padding10 ididesno"
             @click="postData"
           >
-            S'inscrire maintenant
+            Ajouter
           </button>
 
           <div
             v-if="postResult"
             class="alert alert-secondary mt-2 rezultatneki"
             role="alert"
-          >   <!-- Affiche l'erreur ou donnés envoyeé !-->
+          >
             <pre>{{ postResult }}</pre>
           </div>
         </div>
       </div>
-      
     </div>
-    </b-col>
-      </b-row>
-    </b-container>
   </div>
 </template>
 
@@ -93,14 +82,14 @@ export default {
     fortmatResponse(res) {
       return JSON.stringify(res, null, 2);
     },
-    // post les donnés inscrit dans les inputs
+
     async postData() {
       const postData = {
         username: this.$refs.name.value,
         email: this.$refs.email.value,
         password: this.$refs.password.value,
       };
-      // post les donnés dans le server :D 
+
       try {
         const res = await fetch(`${baseURL}users`, {
           method: "post",
@@ -110,13 +99,15 @@ export default {
           },
           body: JSON.stringify(postData),
         });
-    // afficher si error et sinon le resultat envoyé
+
         if (!res.ok) {
           const message = `An error has occured: ${res.status} - ${res.statusText}`;
           throw new Error(message);
         }
 
         const data = await res.json();
+
+        //const edin = "testing";
 
         const result = {
           status: res.status + "-" + res.statusText,
@@ -152,8 +143,5 @@ export default {
 }
 .rezultatneki {
   margin-top: 3.5rem !important;
-}
-.padding100 {
-  margin-top: 100px;
 }
 </style>

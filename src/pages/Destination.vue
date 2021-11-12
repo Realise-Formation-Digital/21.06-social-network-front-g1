@@ -17,7 +17,6 @@
     <!-- CONTENT OF PAGE !-->
     <b-container class="bv-example-row margintop80px">
       <b-row>
-        <!-- Afficher une ville dans - boucle !-->
         <b-col md="6" v-for="(city, index) in cities" :key="index">
           <card
             :id="city.id"
@@ -30,7 +29,6 @@
     </b-container>
 
     <!-- | MODAL | -->
-<!-- Afficher l'image, desc, date, like, commentaires et auteur -->
     <b-modal
       dialog-class="rodjakimagemodal"
       v-model="modalShow"
@@ -98,21 +96,31 @@ export default {
     };
   },
   methods: {
-    // affiche la ville selected 
+    handleEvent(message) {
+      console.log("Recu", message);
+    },
     async handleselectedVille(id) {
       console.log("ecoute", id);
       this.selectedVille = null;
       const caractereid = await axios.get("http://localhost:3000/city/" + id);
       console.log(caractereid);
+      //this.selectedVille = this.mangas.find((manga) => manga.id === id);
       this.selectedVille = caractereid.data;
       this.modalShow = true;
     },
     async getCity() {
-      // Get the answer from the serverand stock it in result
+      // Get the answer from the server (Punk Api) and stock it in result
       const result = await axios.get("http://localhost:3000/city/");
       console.log("result", result);
       // Stock the result in dynamic variable that connect HTML and JS
       this.cities = result.data;
+    },
+    searchManga() {
+      this.searchedManga = [];
+      const searchedWord = this.search;
+      this.searchedManga = this.mangas.filter((m) =>
+        m.title.toLowerCase().includes(searchedWord.toLowerCase())
+      );
     },
   },
 };
