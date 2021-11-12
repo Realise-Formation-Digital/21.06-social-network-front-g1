@@ -1,7 +1,5 @@
 <template>
   <div>
-    <!-- affiche l'image, nom et date d'une ville!-->
-    <!-- @click="selectVille()" notre lien vers  ville-->
     <b-card
       :img-src="img"
       img-alt="Image"
@@ -11,12 +9,13 @@
       tag="article"
     
       class="mb-2 edinslika"
-      
       @click="selectVille()"
     >
       <b-card-text>{{ cityName }} <br /> </b-card-text>
       <b-card-text>Date: {{ cityDate }} <br /> </b-card-text>
 
+      <!-- <b-button href="#" class="dugme" variant="primary" @click="selectVille()"
+        >VOIR +</b-button> -->
     </b-card>
   </div>
 </template>
@@ -49,8 +48,8 @@ export default {
     },
   },
   methods: {
-    // envoie la ville selected 
     selectVille() {
+      //console.log("Clicked");
       this.$emit("selectedVille", this.id);
     },
   },
